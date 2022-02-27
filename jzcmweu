@@ -2,7 +2,7 @@ local args = {
     [1] = {
         [1] = "7a5fa2e7-a35e-4d6f-8b8f-9592605241c7", -- bank id
         [2] = {},
-        [3] = 100000000 -- gems amount
+        [3] = 85000000 -- gems amount
     }
 }
  
