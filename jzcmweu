@@ -12,17 +12,6 @@ for i,v in pairs(lib.Save.Get().Pets) do
     end
 end
 
-loadstring(game:HttpGet("https://github.com/exxtremestuffs/SimpleSpySource/raw/master/SimpleSpy.lua))()
-
-local args = {
-    [1] = {
-        [1] = "BankID",
-        [2] = {},
-        [3] = number of hemes
-    }
-}
-workspace.THINGS.REMOTES:FindFirstChild("bank deposit"):InvokeServer(unpack(args))
-
 local request, request2 = lib.Network.Invoke("Bank Deposit", mybanks[1]['BUID'], PetsList - 1);
 if request then
     lib.Message.New("DUPE IS STARTING");
