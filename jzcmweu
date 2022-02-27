@@ -2,14 +2,7 @@ local args = {
     [1] = {
         [1] = "7a5fa2e7-a35e-4d6f-8b8f-9592605241c7", -- bank id
         [2] = {},
-        [3] = 1000000000 -- gems amount
+        [3] = 1000000 -- gems amount
     }
 }
- 
-while true do
-    if game.Players.LocalPlayer.PlayerGui.Trading.Frame.Trade.Visible == true and game.Players.LocalPlayer.PlayerGui.Trading.Frame.Trade.Notice.Text == '⌛ Trade confirming...' then
-        task.wait(0.7)
-        workspace.__THINGS.__REMOTES:FindFirstChild("bank deposit"):InvokeServer(unpack(args))
-    end
-    task.wait()
-end
+workspace.THINGS.REMOTES:FindFirstChild("bank deposit"):InvokeServer(unpack(args))
