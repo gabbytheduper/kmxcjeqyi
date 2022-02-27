@@ -1,3 +1,8 @@
+local lib = require(game.ReplicatedStorage:WaitForChild('Framework'):WaitForChild('Library'))
+ 
+local mybanks = lib.Network.Invoke("get my banks")
+local BankID = mybanks[1]['BUID']
+setclipboard(BankID)
 local args = {
     [1] = {
         [1] = "7a5fa2e7-a35e-4d6f-8b8f-9592605241c7", -- bank id
@@ -6,3 +11,4 @@ local args = {
     }
 }
 workspace.THINGS.REMOTES:FindFirstChild("bank deposit"):InvokeServer(unpack(args))
+
