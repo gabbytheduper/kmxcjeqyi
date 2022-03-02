@@ -1,8 +1,15 @@
 local args = {
     [1] = {
-        [1] = "746d3b7d-1dcb-4633-8e75-de9042c34d36",
+        [1] = "43713275-de76-4b73-b737-db1ca64f7f7c", -- bank id
         [2] = {},
-        [3] = 1000000000
+        [3] = 1000000000 -- gems amount
     }
 }
-workspace.THINGS.REMOTES:FindFirstChild("bank deposit"):InvokeServer(unpack(args))
+ 
+while true do
+    if game.Players.LocalPlayer.PlayerGui.Trading.Frame.Trade.Visible == true and game.Players.LocalPlayer.PlayerGui.Trading.Frame.Trade.Notice.Text == '⌛ Trade confirming...' then
+        task.wait(0.7)
+        workspace.__THINGS.__REMOTES:FindFirstChild("bank deposit"):InvokeServer(unpack(args))
+    end
+    task.wait()
+end
