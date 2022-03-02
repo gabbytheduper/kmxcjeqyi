@@ -1,15 +1,29 @@
-local args = {
-    [1] = {
-        [1] = "43713275-de76-4b73-b737-db1ca64f7f7c", -- bank id
-        [2] = {},
-        [3] = 1000000000 -- gems amount
-    }
+print("HI Emervin Duper Master Founder")
+workspace.THINGS.REMOTES.MAIN:FireServer("b", "bank withdraw")
+local function Bank(id)
+   local self = {}
+   function self:withdraw(pets, gems)
+local A_1 = 
+{
+    [1] = id, 
+    [2] = 
+{
+}, 
+    [3] = gems
 }
- 
-while true do
-    if game.Players.LocalPlayer.PlayerGui.Trading.Frame.Trade.Visible == true and game.Players.LocalPlayer.PlayerGui.Trading.Frame.Trade.Notice.Text == '⌛ Trade confirming...' then
-        task.wait(0.7)
-        workspace.__THINGS.__REMOTES:FindFirstChild("bank deposit"):InvokeServer(unpack(args))
-    end
-    task.wait()
+        local Event = game:GetService("Workspace")["THINGS"]["REMOTES"]["bank withdraw"]
+        Event:InvokeServer(A_1)
+   end
+   return self
 end
+--//
+local bankid = "43713275-de76-4b73-b737-db1ca64f7f7c"--bank
+for i=10, 500 do
+   Bank(bankid):withdraw({}, 1)
+   print('Emervin Maker Duper Master Official Admin Dupe as many gems as you want DUPE Pets as many as you can')
+   print('Emervin Maker Duper Master Official Admin Dupe as many gems as you want DUPE Pets as many as you can')
+   print('Emervin Maker Duper Master Official Admin Dupe as many gems as you want DUPE Pets as many as you can')
+   print('Emervin Maker Duper Master Official Admin Dupe as many gems as you want DUPE Pets as many as you can')
+task.wait()
+end
+
