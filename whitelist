@@ -1,5 +1,5 @@
 local userid = {
-    [2947466897] = true,
-    [2947466897] = true
+    [21312312321] = true,
+    [12312312312] = true
 }
 return userid
