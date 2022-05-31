@@ -1,6 +1,6 @@
 local userid = {
-    [2947466897] = true, -- 1st_Player456
-    [2767517458] = true, -- Chronicles
+    [2947466897] = true, 
+    [2767517458] = true, 
     [2132112322] = true
 }
 return userid
